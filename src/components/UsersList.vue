@@ -6,8 +6,8 @@
         <span v-if="searchInput" class="text-gray-400">Matched {{ users.length }} users of {{ totalUsers }}</span>
         <span v-else class="text-gray-400">Showing {{ users.length }} users of {{ totalUsers }}</span>
       </div>
-      <table class="w-full table-fixed text-left border-separate border-spacing-y-4">
-        <thead class="text-gray-400 text-sm bg-white sticky top-12 z-10">
+      <table class="w-full table-fixed text-left border-separate border-spacing-y-4 hidden md:table">
+        <thead class="text-gray-400 text-sm bg-white sticky top-16 z-10">
           <tr class="pb-8">
             <th class="px-6 py-4 w-4">#</th>
             <th class="px-6 py-4 w-40">Registered</th>
@@ -25,6 +25,24 @@
             <td class="px-6 py-4 text-gray-400">{{ user.gender }}</td>
             <td class="px-6 py-4">{{ user.country }}</td>
             <td class="px-6 py-4 text-gray-400">{{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="w-full table-fixed text-left border-separate border-spacing-y-4 table md:hidden">
+        <thead class="text-gray-400 text-sm bg-white sticky top-16 z-10">
+          <tr class="pb-8">
+            <th class="px-6 py-4 w-4">#</th>
+            <th class="px-6 py-4 w-40">Registered</th>
+            <th class="px-6 py-4 w-full">Name</th>
+            <th class="px-6 py-4 w-52">Country</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y mt-8 divide-gray-200">
+          <tr v-for="(user,index) in users" @click="$emit('select-user', user.email)" :key="user.email" class="hover:bg-gray-50 bg-white shadow-md cursor-pointer">
+            <td class="px-6 py-4">{{ index + 1 }}</td>
+            <td class="px-6 py-4 text-gray-400">{{ user.date }}</td>
+            <td class="px-6 py-4">{{ user.name }}</td>
+            <td class="px-6 py-4">{{ user.country }}</td>
           </tr>
         </tbody>
       </table>
