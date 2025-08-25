@@ -7,7 +7,7 @@
         <span v-else class="text-gray-400 hidden md:block">Showing {{ users.length }} users of {{ totalUsers }}</span>
         <span class="text-gray-400 md:hidden">{{ users.length }} / {{ totalUsers }}</span>
       </div>
-      <table class="w-full table-fixed text-left border-separate border-spacing-y-4 hidden md:table">
+      <table class="w-full table-fixed text-left border-separate border-spacing-y-4  hidden md:table">
         <thead class="text-gray-400 text-sm bg-white sticky top-16 z-10">
           <tr class="pb-8">
             <th class="px-6 py-4 w-4">#</th>
@@ -18,11 +18,11 @@
             <th class="px-6 py-4 w-full">Email</th>
           </tr>
         </thead>
-        <tbody class="divide-y mt-8 divide-gray-200">
-          <tr v-for="(user,index) in users" @click="$emit('select-user', user.email)" :key="user.email" class="hover:bg-gray-50 bg-white shadow-md cursor-pointer">
+        <tbody class="mt-8">
+          <tr v-for="(user,index) in users" @click="$emit('select-user', user.email)" :key="user.email" class="group hover:bg-gray-50 border border-blue-600 bg-white shadow-md hover:shadow-sky-400 hover:shadow-[0_0_0_2px_rgba(59,130,246,0.7)] cursor-pointer rounded">
             <td class="px-6 py-4">{{ index + 1 }}</td>
             <td class="px-6 py-4 text-gray-400">{{ user.date }}</td>
-            <td class="px-6 py-4">{{ user.name }}</td>
+            <td class="px-6 py-4 group-hover:text-sky-400">{{ user.name }}</td>
             <td class="px-6 py-4 text-gray-400">{{ user.gender }}</td>
             <td class="px-6 py-4">{{ user.country }}</td>
             <td class="px-6 py-4 text-gray-400">{{ user.email }}</td>
