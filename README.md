@@ -1,6 +1,7 @@
 # front-end-assignment-kiratech
 
 Initiated project from the given repo. Check the following to use run this code
+**It is also LIVE at: [https://kiratech.safwanzarif.dev/](https://kiratech.safwanzarif.dev/)**
 
 ## Project Setup
 
