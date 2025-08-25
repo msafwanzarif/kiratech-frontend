@@ -11,9 +11,9 @@
       >
         ✕
       </button>
-      <h2 class="text-2xl font-bold mb-4">{{ user.name }}</h2>
+      <h2 class="text-2xl font-bold mb-4 text-center md:text-left">{{ user.name }}</h2>
       <div class="space-y-2 text-gray-700">
-        <div class="grid grid-cols-[auto,1fr] gap-8">
+        <div class="md:grid flex flex-col items-center md:grid-cols-[auto,1fr] gap-8">
           <img :src="user.picture" alt="User Picture" class="w-32 h-32 rounded-full" />
           <div class="grid grid-cols-[auto,1fr] gap-4 text-sm">
             <span class="text-gray-400">Registered:</span> <span>{{ user.date }}</span>

@@ -1,10 +1,11 @@
 <template>
-  <section class="container mx-auto px-4 mt-12">
+  <section class="container mx-auto px-4 mt-4 md:mt-12">
     <div class="">
-      <div class="w-full bg-white p-4 flex items-center justify-end sticky top-0 z-10">
+      <div class="w-full bg-white p-4 flex items-center justify-end sticky top-0 z-20">
         <input type="text" v-model="searchInput" id="search" placeholder="Search users..." class="border border-gray-300 rounded-md px-4 py-2 mr-4" />
-        <span v-if="searchInput" class="text-gray-400">Matched {{ users.length }} users of {{ totalUsers }}</span>
-        <span v-else class="text-gray-400">Showing {{ users.length }} users of {{ totalUsers }}</span>
+        <span v-if="searchInput" class="text-gray-400 hidden md:block">Matched {{ users.length }} users of {{ totalUsers }}</span>
+        <span v-else class="text-gray-400 hidden md:block">Showing {{ users.length }} users of {{ totalUsers }}</span>
+        <span class="text-gray-400 md:hidden">{{ users.length }} / {{ totalUsers }}</span>
       </div>
       <table class="w-full table-fixed text-left border-separate border-spacing-y-4 hidden md:table">
         <thead class="text-gray-400 text-sm bg-white sticky top-16 z-10">
