@@ -32,7 +32,6 @@
         <thead class="text-gray-400 text-sm bg-white sticky top-16 z-10">
           <tr class="pb-8">
             <th class="px-6 py-4 w-4">#</th>
-            <th class="px-6 py-4 w-40">Registered</th>
             <th class="px-6 py-4 w-full">Name</th>
             <th class="px-6 py-4 w-52">Country</th>
           </tr>
@@ -40,7 +39,6 @@
         <tbody class="divide-y mt-8 divide-gray-200">
           <tr v-for="(user,index) in users" @click="$emit('select-user', user.email)" :key="user.email" class="hover:bg-gray-50 bg-white shadow-md cursor-pointer">
             <td class="px-6 py-4">{{ index + 1 }}</td>
-            <td class="px-6 py-4 text-gray-400">{{ user.date }}</td>
             <td class="px-6 py-4">{{ user.name }}</td>
             <td class="px-6 py-4">{{ user.country }}</td>
           </tr>
